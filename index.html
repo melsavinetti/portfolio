@@ -50,6 +50,8 @@
       border-right: 1px solid var(--border);
       background: var(--bg-home);
       z-index: 10;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
 
     .sidebar-top { display: flex; flex-direction: column; gap: 36px; }
@@ -95,6 +97,7 @@
       position: relative;
       background: var(--bg-home);
       transition: background 0.2s;
+      width: calc(100% - var(--sidebar-w));
     }
 
     main.case-bg { background: var(--bg-case); }
