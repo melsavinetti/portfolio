@@ -77,7 +77,8 @@
     .nav-item:hover  { background: var(--nav-hover); }
     .nav-item.active { background: var(--nav-active); }
 
-    .nav-item svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--text); }
+    .nav-item svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--text); pointer-events: none; }
+    .nav-item * { pointer-events: none; }
 
     .sidebar-bottom .nav-item { color: var(--muted); }
     .sidebar-bottom .nav-item svg { color: var(--muted); }
