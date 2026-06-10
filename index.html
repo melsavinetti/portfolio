@@ -598,7 +598,7 @@
     const mainEl   = document.getElementById('main');
     const caseViews = new Set(['ux-org-design','design-systems','10-50-90','kiid-ai','barstool-espn','thescore-bet','thescore']);
 
-    function showView(id) {
+    function showView(id, pushState = true) {
       views.forEach(v => v.classList.remove('active'));
       navItems.forEach(n => n.classList.remove('active'));
 
@@ -609,6 +609,11 @@
       if (navItem) navItem.classList.add('active');
 
       mainEl.classList.toggle('case-bg', caseViews.has(id));
+
+      if (pushState) {
+        const hash = id === 'home' ? '' : '#' + id;
+        history.pushState(null, '', location.pathname + hash);
+      }
     }
 
     navItems.forEach(item => {
@@ -618,6 +623,16 @@
     // Logo click → home
     document.querySelector('.logo-wrap').addEventListener('click', () => showView('home'));
     document.querySelector('.logo-wrap').style.cursor = 'pointer';
+
+    // Restore view from URL hash on load
+    const initialView = location.hash.slice(1) || 'home';
+    showView(document.getElementById('view-' + initialView) ? initialView : 'home', false);
+
+    // Handle back/forward navigation
+    window.addEventListener('popstate', () => {
+      const id = location.hash.slice(1) || 'home';
+      showView(id, false);
+    });
   </script>
 
 </body>
