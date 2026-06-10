@@ -12,8 +12,8 @@
 
     :root {
       --sidebar-w: 276px;
-      --bg-home:   #fffff5;
-      --bg-case:   #fffff5;
+      --bg-home:   #fffeff;
+      --bg-case:   #f8f7f3;
       --border:    #e8e7e3;
       --text:      #151515;
       --muted:     #7b7b7b;
@@ -105,6 +105,13 @@
     }
 
     main.case-bg { background: var(--bg-case); }
+    main[data-view="ux-org-design"]  { background: #f0f0eb; }
+    main[data-view="design-systems"] { background: #edf4f0; }
+    main[data-view="10-50-90"]       { background: #f0edf8; }
+    main[data-view="kiid-ai"]        { background: #edf2f8; }
+    main[data-view="barstool-espn"]  { background: #f8edee; }
+    main[data-view="thescore-bet"]   { background: #edf8f0; }
+    main[data-view="thescore"]       { background: #f8f2ed; }
 
     /* ── Views ── */
     .view { display: none; }
@@ -968,6 +975,7 @@
       if (navItem) navItem.classList.add('active');
 
       mainEl.classList.toggle('case-bg', caseViews.has(id));
+      mainEl.setAttribute('data-view', id);
 
       if (pushState) {
         const hash = id === 'home' ? '' : '#' + id;
