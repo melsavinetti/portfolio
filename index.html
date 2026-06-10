@@ -100,13 +100,15 @@
       position: relative;
       background: var(--bg-home);
       transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
     }
 
     main.case-bg { background: var(--bg-case); }
 
     /* ── Views ── */
     .view { display: none; }
-    .view.active { display: block; }
+    .view.active { display: block; flex: 1; }
 
     /* Home */
     #view-home {
@@ -229,6 +231,9 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 12px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-text {
@@ -236,6 +241,7 @@
       line-height: 1.8;
       color: var(--text);
       max-width: 640px;
+      margin: 0 auto;
     }
 
     /* Image blocks */
