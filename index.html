@@ -219,7 +219,70 @@
       line-height: 1.5;
     }
 
-    .case-body { max-width: 884px; padding: 0 40px; }
+    /* Content sections */
+    .content-section { margin-bottom: 64px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text);
+      max-width: 640px;
+    }
+
+    /* Image blocks */
+    .img-block { margin-bottom: 64px; }
+
+    .img-single {
+      width: 100%;
+      height: 480px;
+      background: var(--img-placeholder);
+      border-radius: 12px;
+    }
+
+    .img-triple {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .img-triple .img-item {
+      height: 260px;
+      background: var(--img-placeholder);
+      border-radius: 12px;
+    }
+
+    .img-quad-plus {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .img-quad-plus .quad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .img-quad-plus .quad-grid .img-item {
+      height: 190px;
+      background: var(--img-placeholder);
+      border-radius: 12px;
+    }
+
+    .img-quad-plus .img-large {
+      height: 396px;
+      background: var(--img-placeholder);
+      border-radius: 12px;
+    }
 
     .case-title {
       font-family: var(--serif);
@@ -386,17 +449,47 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Scaling Teams template -->
+      <div class="content-section">
+        <div class="section-label">Situation</div>
+        <p class="section-text">Describe what was happening when you stepped in — the team structure, the gaps, the pressure points.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">The Challenge</div>
+        <p class="section-text">What made this hard? What was at stake for the team, the product, or the business?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">My Approach</div>
+        <p class="section-text">Walk through the key decisions you made, how you structured the work, and how you led the change.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-single"></div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Outcomes</div>
+        <p class="section-text">What changed as a result? Include team health, velocity, product quality, or business impact.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -410,17 +503,63 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Platform</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Designing Products template -->
+      <div class="content-section">
+        <div class="section-label">The Problem</div>
+        <p class="section-text">What user or business problem were you solving? What did you know going in, and what needed to be figured out?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Process</div>
+        <p class="section-text">Walk through your research, explorations, and the decisions that shaped the direction.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-triple">
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Solution</div>
+        <p class="section-text">What shipped? Describe the final design and what it enabled for users.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-quad-plus">
+          <div class="quad-grid">
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+          </div>
+          <div class="img-large"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Impact</div>
+        <p class="section-text">What did this move for users or the business? Metrics, qualitative feedback, or before/after.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -434,17 +573,63 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Platform</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Designing Products template -->
+      <div class="content-section">
+        <div class="section-label">The Problem</div>
+        <p class="section-text">What user or business problem were you solving? What did you know going in, and what needed to be figured out?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Process</div>
+        <p class="section-text">Walk through your research, explorations, and the decisions that shaped the direction.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-triple">
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Solution</div>
+        <p class="section-text">What shipped? Describe the final design and what it enabled for users.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-quad-plus">
+          <div class="quad-grid">
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+          </div>
+          <div class="img-large"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Impact</div>
+        <p class="section-text">What did this move for users or the business? Metrics, qualitative feedback, or before/after.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -458,17 +643,47 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Scaling Teams template -->
+      <div class="content-section">
+        <div class="section-label">Situation</div>
+        <p class="section-text">Describe what was happening when you stepped in — the team structure, the gaps, the pressure points.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">The Challenge</div>
+        <p class="section-text">What made this hard? What was at stake for the team, the product, or the business?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">My Approach</div>
+        <p class="section-text">Walk through the key decisions you made, how you structured the work, and how you led the change.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-single"></div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Outcomes</div>
+        <p class="section-text">What changed as a result? Include team health, velocity, product quality, or business impact.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -482,17 +697,47 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Scaling Teams template -->
+      <div class="content-section">
+        <div class="section-label">Situation</div>
+        <p class="section-text">Describe what was happening when you stepped in — the team structure, the gaps, the pressure points.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">The Challenge</div>
+        <p class="section-text">What made this hard? What was at stake for the team, the product, or the business?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">My Approach</div>
+        <p class="section-text">Walk through the key decisions you made, how you structured the work, and how you led the change.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-single"></div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Outcomes</div>
+        <p class="section-text">What changed as a result? Include team health, velocity, product quality, or business impact.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -506,17 +751,63 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Platform</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Designing Products template -->
+      <div class="content-section">
+        <div class="section-label">The Problem</div>
+        <p class="section-text">What user or business problem were you solving? What did you know going in, and what needed to be figured out?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Process</div>
+        <p class="section-text">Walk through your research, explorations, and the decisions that shaped the direction.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-triple">
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Solution</div>
+        <p class="section-text">What shipped? Describe the final design and what it enabled for users.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-quad-plus">
+          <div class="quad-grid">
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+          </div>
+          <div class="img-large"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Impact</div>
+        <p class="section-text">What did this move for users or the business? Metrics, qualitative feedback, or before/after.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
@@ -530,17 +821,63 @@
 <div class="case-cover"></div>
       <div class="case-meta">
         <div class="meta-item">
-          <div class="meta-label">Goal</div>
-          <div class="meta-value">Here's some goal text</div>
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Context</div>
-          <div class="meta-value">Here's some context</div>
+          <div class="meta-label">Timeline</div>
+          <div class="meta-value">—</div>
         </div>
         <div class="meta-item">
-          <div class="meta-label">Metrics</div>
-          <div class="meta-value">Here's some metrics</div>
+          <div class="meta-label">Platform</div>
+          <div class="meta-value">—</div>
         </div>
+      </div>
+
+      <!-- Designing Products template -->
+      <div class="content-section">
+        <div class="section-label">The Problem</div>
+        <p class="section-text">What user or business problem were you solving? What did you know going in, and what needed to be figured out?</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Process</div>
+        <p class="section-text">Walk through your research, explorations, and the decisions that shaped the direction.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-triple">
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+          <div class="img-item"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Solution</div>
+        <p class="section-text">What shipped? Describe the final design and what it enabled for users.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-quad-plus">
+          <div class="quad-grid">
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+            <div class="img-item"></div>
+          </div>
+          <div class="img-large"></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Impact</div>
+        <p class="section-text">What did this move for users or the business? Metrics, qualitative feedback, or before/after.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-label">Key Decisions</div>
+        <p class="section-text">What were the hardest calls? What would you do differently with hindsight?</p>
       </div>
 
     </div>
