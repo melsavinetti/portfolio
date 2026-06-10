@@ -113,6 +113,14 @@
     main[data-view="thescore-bet"]   { background: #edf8f0; }
     main[data-view="thescore"]       { background: #f8f2ed; }
 
+    body[data-view="ux-org-design"]  .sidebar { background: #f0f0eb; }
+    body[data-view="design-systems"] .sidebar { background: #edf4f0; }
+    body[data-view="10-50-90"]       .sidebar { background: #f0edf8; }
+    body[data-view="kiid-ai"]        .sidebar { background: #edf2f8; }
+    body[data-view="barstool-espn"]  .sidebar { background: #f8edee; }
+    body[data-view="thescore-bet"]   .sidebar { background: #edf8f0; }
+    body[data-view="thescore"]       .sidebar { background: #f8f2ed; }
+
     /* ── Views ── */
     .view { display: none; }
     .view.active { display: block; flex: 1; }
@@ -976,6 +984,7 @@
 
       mainEl.classList.toggle('case-bg', caseViews.has(id));
       mainEl.setAttribute('data-view', id);
+      document.body.setAttribute('data-view', id);
 
       if (pushState) {
         const hash = id === 'home' ? '' : '#' + id;
