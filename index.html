@@ -32,6 +32,7 @@
       background: var(--bg-home);
       -webkit-font-smoothing: antialiased;
       display: flex;
+      transition: background 0.2s;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -48,7 +49,7 @@
       justify-content: space-between;
       padding: 32px 24px;
       border-right: 1px solid var(--border);
-      background: var(--bg-home);
+      background: transparent;
       z-index: 10;
     }
 
@@ -98,28 +99,18 @@
       flex: 1;
       min-height: 100vh;
       position: relative;
-      background: var(--bg-home);
-      transition: background 0.2s;
+      background: transparent;
       display: flex;
       flex-direction: column;
     }
 
-    main.case-bg { background: var(--bg-case); }
-    main[data-view="ux-org-design"]  { background: #f0f0eb; }
-    main[data-view="design-systems"] { background: #edf4f0; }
-    main[data-view="10-50-90"]       { background: #f0edf8; }
-    main[data-view="kiid-ai"]        { background: #edf2f8; }
-    main[data-view="barstool-espn"]  { background: #f8edee; }
-    main[data-view="thescore-bet"]   { background: #edf8f0; }
-    main[data-view="thescore"]       { background: #f8f2ed; }
-
-    body[data-view="ux-org-design"]  .sidebar { background: #f0f0eb; }
-    body[data-view="design-systems"] .sidebar { background: #edf4f0; }
-    body[data-view="10-50-90"]       .sidebar { background: #f0edf8; }
-    body[data-view="kiid-ai"]        .sidebar { background: #edf2f8; }
-    body[data-view="barstool-espn"]  .sidebar { background: #f8edee; }
-    body[data-view="thescore-bet"]   .sidebar { background: #edf8f0; }
-    body[data-view="thescore"]       .sidebar { background: #f8f2ed; }
+    body[data-view="ux-org-design"]  { background: #f0f0eb; }
+    body[data-view="design-systems"] { background: #edf4f0; }
+    body[data-view="10-50-90"]       { background: #f0edf8; }
+    body[data-view="kiid-ai"]        { background: #edf2f8; }
+    body[data-view="barstool-espn"]  { background: #f8edee; }
+    body[data-view="thescore-bet"]   { background: #edf8f0; }
+    body[data-view="thescore"]       { background: #f8f2ed; }
 
     /* ── Views ── */
     .view { display: none; }
