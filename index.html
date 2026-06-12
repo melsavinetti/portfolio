@@ -257,17 +257,19 @@
     .section-text + .section-text { margin-top: 20px; }
 
     .section-list {
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.8;
       color: var(--text);
       max-width: 640px;
       margin: 0 auto;
-      padding-left: 40px;
+      padding-left: 24px;
       list-style: disc;
     }
-    .section-list li { margin-bottom: 6px; }
+    .section-list::marker,
+    .section-list li::marker { font-size: 0.55em; }
+    .section-list li { margin-bottom: 6px; padding-left: 8px; }
     .section-list + .section-text { margin-top: 20px; }
-    #view-10-50-90 .section-list { margin-left: 0; }
+    #view-10-50-90 .section-list { margin-left: 80px; }
 
     /* Image blocks */
     .img-block { margin-bottom: 64px; }
