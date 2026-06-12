@@ -12,7 +12,7 @@
 
     :root {
       --sidebar-w: 276px;
-      --bg-home:   radial-gradient(ellipse 80% 110% at 27% 27%, #fff6ff 0%, #fffefb 100%);
+      --bg-home:   #fffdf4;
       --bg-case:   #f8f7f3;
       --border:    rgba(0, 0, 0, 0.05);
       --text:      #151515;
@@ -29,7 +29,7 @@
     body {
       font-family: var(--sans);
       color: var(--text);
-      background: var(--bg-home);
+      background: url("data:image/svg+xml,<svg viewBox='0 0 1440 1024' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(77.25 38.7 -54.422 108.63 384.5 273)'><stop stop-color='rgba(255,246,255,1)' offset='0'/><stop stop-color='rgba(255,253,244,1)' offset='1'/></radialGradient></defs></svg>") center/cover no-repeat;
       -webkit-font-smoothing: antialiased;
       display: flex;
       transition: background 0.2s;
