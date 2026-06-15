@@ -277,8 +277,8 @@
       list-style: disc;
     }
     .section-list { list-style: none; }
-    .section-list li { margin-bottom: 6px; padding-left: 8px; position: relative; }
-    .section-list li::before { content: '•'; font-size: 0.55em; position: absolute; left: -12px; top: 0.9em; transform: translateY(-50%); }
+    .section-list li { margin-bottom: 6px; padding-left: 0; display: flex; align-items: flex-start; gap: 10px; }
+    .section-list li::before { content: '•'; font-size: 0.55em; line-height: 1; margin-top: 0.72em; flex-shrink: 0; }
     .section-list + .section-text { margin-top: 20px; }
     .section-text strong { font-weight: 700; }
 
