@@ -304,9 +304,9 @@
       padding-left: 24px;
       list-style: disc;
     }
-    .section-list::marker,
-    .section-list li::marker { font-size: 0.55em; }
-    .section-list li { margin-bottom: 6px; padding-left: 8px; }
+    .section-list { list-style: none; }
+    .section-list li { margin-bottom: 6px; padding-left: 8px; position: relative; }
+    .section-list li::before { content: '•'; font-size: 0.55em; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); }
     .section-list + .section-text { margin-top: 20px; }
     .section-text strong { font-weight: 700; }
 
