@@ -192,28 +192,27 @@
     }
 
     .case-header {
-      padding: 0 40px;
-      margin-bottom: 40px;
-      text-align: center;
+      padding: 0 0 16px;
+      text-align: left;
     }
 
     .case-cover {
       width: calc(100% + 140px);
       margin-left: -70px;
-      height: 420px;
+      height: auto;
+      aspect-ratio: 16 / 9;
       background: var(--img-placeholder);
       border-radius: 16px;
       margin-bottom: 0;
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
     }
 
     .case-meta {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      padding: 28px 0 36px;
-      margin: 0 auto 36px;
-      max-width: 640px;
-      width: 100%;
+      padding: 32px 0 0;
+      margin: 0 0 70px;
     }
 
     .meta-item {}
@@ -267,33 +266,6 @@
     .section-text + .section-text { margin-top: 20px; }
     .section-text + .section-list { margin-top: 20px; }
 
-    /* 10-50-90 header overrides */
-    #view-10-50-90 .case-header {
-      text-align: left;
-      padding: 0 0 16px;
-      max-width: 640px;
-      margin: 0 auto 0;
-    }
-    #view-10-50-90 .case-title {
-      font-family: var(--serif);
-      font-size: 48px;
-      font-weight: 700;
-    }
-    #view-10-50-90 .case-intro {
-      text-align: left;
-      margin: 0;
-      max-width: 100%;
-    }
-    #view-10-50-90 .case-meta {
-      margin: 0 auto 70px;
-      max-width: 640px;
-      padding-top: 16px;
-    }
-    #view-10-50-90 .section-label {
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
 
     .section-list {
       font-size: 16px;
@@ -306,7 +278,7 @@
     }
     .section-list { list-style: none; }
     .section-list li { margin-bottom: 6px; padding-left: 8px; position: relative; }
-    .section-list li::before { content: '•'; font-size: 0.55em; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); }
+    .section-list li::before { content: '•'; font-size: 0.55em; position: absolute; left: -12px; top: 0.9em; transform: translateY(-50%); }
     .section-list + .section-text { margin-top: 20px; }
     .section-text strong { font-weight: 700; }
 
