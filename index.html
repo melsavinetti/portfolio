@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/vgu2arp.css" />
+  <script>if (location.hash) document.documentElement.setAttribute('data-hash', '1');</script>
   <style>
+    html[data-hash] #view-home { display: none !important; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -1153,6 +1155,7 @@
     // Restore view from URL hash on load
     const initialView = location.hash.slice(1) || 'home';
     showView(document.getElementById('view-' + initialView) ? initialView : 'home', false);
+    document.documentElement.removeAttribute('data-hash');
 
     // Handle back/forward navigation
     window.addEventListener('popstate', () => {
