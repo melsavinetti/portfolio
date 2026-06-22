@@ -1026,6 +1026,10 @@
         <p class="section-text">Engineering's feedback was that it felt like they were involved in the wrong ways. Directors couldn't attend every review. ICs were consulted too late for their input to change anything meaningful. What eng actually needed was async discoverability for leaders and earlier, lower-stakes involvement for ICs at the 10% stage. We addressed both in V2, but it required genuinely listening to what they asked for rather than designing a solution on their behalf.</p>
         <div class="section-label" style="margin-top: 40px;">Process change needed a hands-on rollout</div>
         <p class="section-text">Broad announcements didn't change how teams worked. What worked was starting with people who are already partially using it, incorporating their feedback, and letting them carry it into their teams. Real adoption happened in the working group, one feature team at a time.</p>
+        <div class="section-label" style="margin-top: 40px;">Reducing red tape can introduce its own red tape</div>
+        <p class="section-text">The goal was to show the team's ability to move faster by removing unnecessary process, but some of what we added to make that possible (new templates, new checkpoints, new documentation) ended up feeling like more red tape rather than less. Cutting process is its own kind of process, and it has to be designed with the same care as what it's replacing.</p>
+        <div class="section-label" style="margin-top: 40px;">Approvals kept the lifecycle linear in practice</div>
+        <p class="section-text">Despite trying to make Uniform non-linear, it kept feeling linear because of how approvals were structured. Once a team had signed off on a mid-fi direction, going back to concept exploration meant unwinding decisions and stakeholders who'd already moved on. The framework allowed for going backward in theory, but the approval structure made it costly enough in practice that teams rarely did.</p>
       </div>
     </div>
 
@@ -1034,16 +1038,16 @@
       <div style="max-width: 640px; margin: 0 auto 40px;">
         <div class="case-header">
           <h2 class="case-title">theScore Bet &amp; Casino</h2>
-          <p class="case-intro">Replace this with the actual narrative about your approach, challenges, and outcomes.</p>
+          <p class="case-intro">Designing North America's first media-company sportsbook, and the cross-border iGaming app it grew into.</p>
         </div>
         <div class="case-meta" style="padding: 32px 0 0; margin: 0;">
           <div class="meta-item">
             <div class="meta-label">Role</div>
-            <div class="meta-value">Head of Design</div>
+            <div class="meta-value">Lead Designer</div>
           </div>
           <div class="meta-item">
             <div class="meta-label">Timeline</div>
-            <div class="meta-value">2020 – 2022</div>
+            <div class="meta-value">2019 – 2022</div>
           </div>
           <div class="meta-item">
             <div class="meta-label">Platform</div>
@@ -1054,15 +1058,21 @@
       <div class="case-cover"></div>
 
       <div class="content-section" style="margin-top: 70px;">
-        <div class="section-tag">Background</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Opportunity</div>
+        <div class="section-label">A media app, but no betting product</div>
+        <p class="section-text">theScore had spent a decade building one of the most-used sports media apps in North America, with roughly 5 million monthly active users at the time, but it had no way to monetize the moment a user's attention peaked: when they were deciding who was going to win. Sports betting was being legalized state by state in the US, and theScore was the first media company positioned to build a sportsbook rather than license its name to one. There was no playbook for what a media-native betting product should feel like, and no existing design system built for regulated, real-money flows.</p>
+        <div class="section-label" style="margin-top: 40px;">Betting and media had to live in two different worlds, briefly</div>
+        <p class="section-text">theScore Bet launched in New Jersey on September 3, 2019, becoming the first mobile sportsbook built by a media company in North America. It had to ship as its own regulated app, separate from theScore's sports media app, since sportsbook licensing, KYC, and geolocation requirements couldn't simply be bolted onto an existing consumer product. The design problem was how to make two separate apps feel like one continuous experience instead of a media app and a betting app that happened to share a name.</p>
       </div>
 
       <div class="content-section">
-        <div class="section-tag">Approach</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Process</div>
+        <div class="section-label">Designing under regulatory constraints, market by market</div>
+        <p class="section-text">Every sportsbook screen had to satisfy a regulator before it satisfied a user. Bet slips, odds formats, responsible gambling messaging, KYC and geolocation checkpoints, and self-exclusion tools were all subject to review by gaming commissions, and requirements varied by jurisdiction. Design decisions that would normally be a quick iteration (copy on a confirmation screen, the order of onboarding steps) went through legal and compliance review before they could ship. We built our onboarding and identity-verification flows to be modular so each new state or province could be configured to its specific regulatory requirements without a redesign.</p>
+        <div class="section-label" style="margin-top: 40px;">FUSE: closing the gap between media and betting</div>
+        <p class="section-text">The first version of theScore Bet lived apart from theScore's media app out of necessity, but that separation was costing engagement: users had to leave the content that was driving their interest in a bet to go place it. In November 2019 we shipped FUSE, an integration layer that let users build a bet slip directly inside theScore's media app and hand off into theScore Bet to confirm and place it. This was the first time a North American sports media app let users construct a wager without leaving their content feed, and it became the connective tissue between the two products for the rest of my time there.</p>
+        <div class="section-label" style="margin-top: 40px;">From sportsbook to sportsbook-and-casino</div>
+        <p class="section-text">When Ontario opened its regulated online sports betting and iGaming market to private operators on April 4, 2022, we combined the sportsbook and a new casino product into a single app, theScore Bet &amp; Casino, rather than launching them separately. That meant designing a navigation model and visual language that could hold sportsbook, live betting, and slots/table games as peers, under an AGCO license and an operating agreement with iGaming Ontario, without the casino product feeling bolted onto the sportsbook.</p>
       </div>
 
       <div class="img-block">
@@ -1070,15 +1080,29 @@
       </div>
 
       <div class="content-section">
-        <div class="section-tag">Impact</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Design</div>
+        <div class="section-label">Bet slip and live betting as the core interaction</div>
+        <p class="section-text">The bet slip was the product. Every other screen existed to feed it. We designed it as a persistent, lightweight tray that could be built up from anywhere (FUSE-driven content, the sportsbook's own odds boards, or live in-game betting) without losing the user's place. Live betting required odds and lines that updated in real time without the screen feeling like it was shifting under the user's thumb mid-tap, which meant careful work on animation timing and layout stability around fast-changing numbers.</p>
+        <div class="section-label" style="margin-top: 40px;">Onboarding that doubled as compliance</div>
+        <p class="section-text">Registration, KYC, and geolocation aren't typically thought of as "design" work, but for a regulated betting product they were the highest-stakes screens in the app: get them wrong and a user can't legally place a bet, regardless of how good the rest of the product is. We treated pre-registration and identity verification as core onboarding design, not a legal afterthought, building clear progress states and plain-language explanations for why each step (ID verification, location check, deposit limits) was required.</p>
+        <div class="section-label" style="margin-top: 40px;">Casino as a peer, not an add-on</div>
+        <p class="section-text">For the Ontario launch, slots and table games needed their own visual identity (richer, more playful, less data-dense than the sportsbook) while still feeling like the same app. We used a shared navigation shell and account/wallet system across both products, so a user's balance, responsible-gambling limits, and identity only existed once, while letting the sportsbook and casino surfaces diverge visually where the content demanded it.</p>
+      </div>
+
+      <div class="content-section">
+        <div class="section-tag">Results</div>
+        <div class="section-label">Fastest-growing product at theScore</div>
+        <p class="section-text">theScore Bet's handle reached $81.6 million in fiscal Q2 2021 (ended February 28, 2021), up 491% year-over-year and 46% quarter-over-quarter, as the betting product scaled across four live US states: New Jersey, Colorado, Indiana, and Iowa. The single best month on record at that point was March 2021, with $30.8 million in handle. In Ontario's first ten days as a regulated market, theScore Bet was one of just four operators (alongside Bet365, FanDuel, and BetMGM) accounting for 79% of all sports betting app downloads in the province, a strong signal for a media-company entrant going up against established global sportsbooks.</p>
+        <p class="section-text">theScore's media app, which fed the betting product through FUSE, was averaging 3.9 million monthly active users and 488 million sessions per quarter by Q2 fiscal 2021, with users opening the app an average of 125 times a month. Across its lifetime, theScore's media app has been downloaded more than 16 million times on Android alone and built a user base north of 10 million. That always-on media audience, and the FUSE integration's ability to convert media attention into betting activity, was central to theScore Bet's growth story relative to sportsbooks without a media property behind them.</p>
+        <p class="section-text">Growth in handle didn't translate to profitability on its own: Q3 fiscal 2021 gaming revenue was still negative ($2.5 million net), even as media revenue hit a record $8.9 million the same quarter. That gap between user and handle growth versus gaming profitability shaped a lot of the product and design roadmap during this period, particularly around increasing same-game parlay adoption and in-app casino cross-sell once Ontario launched.</p>
       </div>
 
       <div class="content-section">
         <div class="section-tag">Learnings</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-label">Compliance is a design constraint, not a blocker</div>
+        <p class="section-text">Early on, the team treated regulatory review as a gate at the end of the process. It worked far better once we brought compliance and legal into design conversations from the start, the same way we'd involve engineering. Knowing what a regulator would and wouldn't accept before we designed a flow saved repeated rework, and it meant the most heavily reviewed screens (onboarding, KYC, responsible gambling) got design attention proportional to how much they mattered.</p>
+        <div class="section-label" style="margin-top: 40px;">A unified identity matters more than a unified UI</div>
+        <p class="section-text">Sportsbook and casino didn't need to look identical to feel like one product. What mattered was that account, wallet, identity, and responsible-gambling controls were singular and consistent. Once those were unified, the sportsbook and casino surfaces could diverge visually to fit their content without users feeling like they'd left the app.</p>
       </div>
 
     </div>
