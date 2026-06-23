@@ -728,35 +728,37 @@
       <div style="max-width: 640px; margin: 0 auto 40px;">
         <div class="case-header">
           <h2 class="case-title">Kiid AI</h2>
-          <p class="case-intro">Replace this with the actual narrative about your approach, challenges, and outcomes.</p>
+          <p class="case-intro">Designing a personalized AI companion that learns who you are and connects you to the people in your life.</p>
         </div>
         <div class="case-meta" style="padding: 32px 0 0; margin: 0;">
           <div class="meta-item">
             <div class="meta-label">Role</div>
-            <div class="meta-value">VP of UX</div>
+            <div class="meta-value">Founding Designer</div>
           </div>
           <div class="meta-item">
             <div class="meta-label">Timeline</div>
-            <div class="meta-value">2023 – 2024</div>
+            <div class="meta-value">2025 – 2026</div>
           </div>
           <div class="meta-item">
             <div class="meta-label">Platform</div>
-            <div class="meta-value">iOS & Android</div>
+            <div class="meta-value">iOS, Android, & Web</div>
           </div>
         </div>
       </div>
       <div class="case-cover"></div>
 
       <div class="content-section" style="margin-top: 70px;">
-        <div class="section-tag">Background</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Opportunity</div>
+        <div class="section-label">An AI that's actually yours</div>
+        <p class="section-text">Kiid AI (kiid.ai), a Miami-based startup backed by Relay Ventures and angel investors, set out to build a different kind of AI product: not a generic assistant, but a personalized AI that learns a user's tone, interests, and values from conversation, and uses that understanding to connect them with the people around them. Every account got its own AI, trained on that person, that friends could talk to directly, ask questions of, and compare notes with. I joined to lead design for the mobile and web apps from early concept through MVP launch.</p>
+        <p class="section-text">There was no reference product to point to. We weren't designing a chatbot, and we weren't designing a social network, we were designing something that had to feel like both at once: an AI companion with a real personality, sitting inside a social graph that gave that personality somewhere to go.</p>
       </div>
 
       <div class="content-section">
-        <div class="section-tag">Approach</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Constraints</div>
+        <div class="section-label">A small team building two hard problems at once</div>
+        <p class="section-text">I led design with a lean team, working in close, near-daily collaboration with product on a shared "Product &lt;&gt; Design Prioritization" tracker that we kept alive across both the demo and the MVP. The tension was real and recurring: product wanted breadth (more surfaces, more launch checkboxes) while design pushed to get fewer flows feeling genuinely good before adding more. That tracker, which went through 50+ revisions over the course of the project, became the place we negotiated that trade-off honestly rather than letting it play out silently in standups.</p>
+        <p class="section-text">The other constraint was conceptual: we were designing onboarding for a product whose entire value proposition only becomes obvious once a user already has friends on the platform. Cold-start was the hardest design problem in the entire product, and it touched everything from onboarding to early retention to how we explained the product in its first ten seconds.</p>
       </div>
 
       <div class="img-block">
@@ -764,15 +766,42 @@
       </div>
 
       <div class="content-section">
-        <div class="section-tag">Impact</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-tag">Design</div>
+        <div class="section-label">Onboarding as a conversation, not a form</div>
+        <p class="section-text">Our first instinct was to make onboarding feel like talking to your AI for the first time: every question (email, interests, values) asked conversationally by an LLM, with no clear seam between "signing up" and "getting to know your AI." It was a compelling idea, but it didn't survive contact with real usage. Routing every onboarding field through an LLM call made the flow slow and inconsistent, and being rigid about which questions every user had to answer meant we collected a lot of generic data and very little that actually made someone's AI feel like them.</p>
+        <p class="section-text">We rebuilt onboarding as a "form + fluid" hybrid: fast, validated forms for the basics (name, school, date of birth), paired with a conversational layer that adapted to whatever the user actually cared about, whether that was their major, a club, or a niche interest like watch collecting or tabletop wargaming, rather than forcing everyone through the same fixed set of questions. That hybrid went through more than 50 revisions as we tuned where the line sat between structure and conversation, and it's the version that shipped.</p>
+        <div class="section-label" style="margin-top: 40px;">Designing for "why do I care?"</div>
+        <p class="section-text">A formative moment in this process was a feedback session with design researcher Belinda Alzner, who reviewed our onboarding cold. Her critique was sharp and specific: the UI was polished, but the value proposition wasn't explicit early enough, and mechanics like the AI's "Score" felt opaque, she kept asking "why do I care?" about elements we'd assumed were self-explanatory. She also surfaced positioning we hadn't been saying out loud (asking a friend's AI what they're into before a party, or to learn how to get in good with someone), which was both differentiated and immediately legible. That session reframed a lot of how we sequenced onboarding afterward: explain the "why" before asking for the "what," and treat every score or mechanic as something that needed to justify itself, not just exist.</p>
+        <div class="section-label" style="margin-top: 40px;">A mobile structure built around the AI, not a feed</div>
+        <p class="section-text">Most social apps default to a content feed as the home screen. We made a deliberate call to make a user's own AI chat the home screen instead, the first thing anyone sees on every hard launch, with Friends and DMs as the two adjacent pages reached by swiping left or right. That structure reinforced the core idea of the product: this is fundamentally a relationship with your AI, and everything else (friends, messaging, discovery) radiates out from that center rather than competing with it for attention.</p>
+        <div class="section-label" style="margin-top: 40px;">Games as a second on-ramp into the social graph</div>
+        <p class="section-text">Alongside chat and friending, we designed a library of lightweight, shareable social games, quizzes your AI generates about you, prompts like "how well do you know me," and similar mechanics, as a second way for the social graph to grow. The Quiz feature let a user's AI build a personalized multiple-choice quiz from their own profile data, share it as a link, and let friends compete to score highest, which gave people a reason to invite friends in that didn't depend on the cold-start problem already being solved.</p>
+        <div class="section-label" style="margin-top: 40px;">Stress-testing the AI's understanding of people</div>
+        <p class="section-text">Late in the project, we built a persona-pipeline testing methodology to evaluate whether the AI was actually learning who someone was, or just pattern-matching the surface of what they typed. We wrote synthetic user archetypes deliberately containing hypocrisies, inconsistencies, and traits that were implied but never stated, the kind of contradictions real people have, and audited whether the system preserved that nuance or flattened it into a clean, wrong average. It was as much a design exercise as an engineering one: it forced us to define, concretely, what "your AI actually knows you" needed to mean for the product's core promise to hold up.</p>
+      </div>
+
+      <div class="img-block">
+        <div class="img-single"></div>
+      </div>
+
+      <div class="content-section">
+        <div class="section-tag">Results</div>
+        <div class="section-label">From concept to a working MVP</div>
+        <p class="section-text">Over the course of the project we shipped a working mobile and web app: AI chat, friending, DMs, onboarding, settings, message reporting, and a growing library of social games, validated through structured device-level QA passes ahead of each milestone. The product reached the point where outside reviewers could engage with the core idea directly and react to it, rather than to a pitch, and feedback consistently confirmed that the concept landed once a user had even a small social graph in place.</p>
       </div>
 
       <div class="content-section">
         <div class="section-tag">Learnings</div>
-        <div class="section-label">Section heading</div>
-        <p class="section-text">Section content placeholder.</p>
+        <div class="section-label">Conversational UI is a tool, not a default</div>
+        <p class="section-text">Routing everything through an LLM felt true to the product's identity, but it wasn't automatically the right interface for every task. Forms are faster and more reliable for structured data; conversation is where the product's personality actually earns its keep. Learning to split the two deliberately, rather than treating "more AI" as inherently better design, was one of the most useful shifts in how the team worked.</p>
+        <div class="section-label" style="margin-top: 40px;">Outside eyes catch what internal eyes can't</div>
+        <p class="section-text">We'd looked at our own onboarding so many times that "why do I care?" had stopped being a question we asked ourselves. A single session with someone seeing it fresh surfaced gaps that weeks of internal review hadn't. Build in real outside feedback early and often, especially for a product whose value isn't self-evident on first open.</p>
+        <div class="section-label" style="margin-top: 40px;">A gamified mechanic needs a stated payoff</div>
+        <p class="section-text">Score and points were meant to signal how well a user's AI knew them, but we never said that plainly on screen, so the number just sat there asking to be ignored. Gamification only works as a design tool if the user can answer "why do I care?" about it without having to ask; if a mechanic's purpose lives only in a doc, it isn't shipped yet.</p>
+        <div class="section-label" style="margin-top: 40px;">Negotiate scope in writing, not in the room</div>
+        <p class="section-text">Product and design wanted different things by default: breadth versus depth. Keeping that disagreement visible in a shared, living tracker rather than re-litigating it verbally in every check-in meant we made the trade-off on purpose, again and again, instead of drifting into it by default.</p>
+        <div class="section-label" style="margin-top: 40px;">Test the thing you're claiming, not the demo case</div>
+        <p class="section-text">It would have been easy to validate the AI's "it knows you" promise against tidy, well-behaved test data and call it done. Writing synthetic users with deliberate contradictions, things people actually do (say one thing, behave another way), was the only way to find out whether the product kept its promise under real human messiness, rather than under conditions we'd quietly made easy for ourselves.</p>
       </div>
 
     </div>
@@ -1124,10 +1153,10 @@
         <p class="section-text">Live betting required odds and lines that updated in real time without the screen feeling like it was shifting under the user's thumb mid-tap, which meant careful work on animation timing and layout stability around fast-changing numbers.</p>
         <div class="section-label" style="margin-top: 40px;">Onboarding that doubled as compliance</div>
         <p class="section-text">Registration, KYC, and geolocation aren't typically thought of as "design" work, but for a regulated betting product they were the highest-stakes screens in the app. If we got these wrong, a user wouldn't be able to legally place a bet, regardless of how good the rest of the product is. We treated pre-registration and identity verification as core onboarding design by building clear progress states and plain-language explanations for why each step (ID verification, location check, deposit limits) was required.</p>
-        <div class="section-label" style="margin-top: 40px;">From sportsbook to sportsbook-and-casino</div>
-        <p class="section-text">When Ontario opened its regulated online sports betting and iGaming market to private operators on April 4, 2022, we combined the sportsbook and a new casino product into a single app, theScore Bet &amp; Casino, rather than launching them separately. That meant designing a navigation model and visual language that could hold sportsbook, live betting, and slots/table games as peers, under an AGCO license and an operating agreement with iGaming Ontario, without the casino product feeling bolted onto the sportsbook.</p>
         <div class="section-label" style="margin-top: 40px;">FUSE: closing the gap between media and betting</div>
         <p class="section-text">The first version of theScore Bet lived apart from theScore's media app out of necessity, but that separation was costing engagement: users had to leave the content that was driving their interest in a bet to go place it. In November 2019 we shipped FUSE, an integration layer that let users build a bet slip directly inside theScore's media app and hand off into theScore Bet to confirm and place it. This was the first time a North American sports media app let users construct a wager without leaving their content feed, and it became the connective tissue between the two products for the rest of my time there.</p>
+        <div class="section-label" style="margin-top: 40px;">From sportsbook to sportsbook-and-casino</div>
+        <p class="section-text">When Ontario opened its regulated online sports betting and iGaming market to private operators on April 4, 2022, we combined the sportsbook and a new casino product into a single app, theScore Bet &amp; Casino, rather than launching them separately. That meant designing a navigation model and visual language that could hold sportsbook, live betting, and slots/table games as peers, under an AGCO license and an operating agreement with iGaming Ontario, without the casino product feeling bolted onto the sportsbook.</p>
       </div>
 
       <div class="img-block">
