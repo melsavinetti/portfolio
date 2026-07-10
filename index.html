@@ -478,21 +478,22 @@
     .mobile-nav-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.15);
     }
     .mobile-nav-drawer {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
-      width: 280px;
-      background: var(--bg);
-      padding: 24px 20px;
+      width: 75vw;
+      max-width: 300px;
+      background: #fdfaf4;
+      padding: 20px 20px 40px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;
       overflow-y: auto;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
+      z-index: 101;
     }
     .mobile-nav-close {
       background: none;
@@ -500,9 +501,11 @@
       cursor: pointer;
       align-self: flex-end;
       padding: 4px;
-      font-size: 22px;
       color: var(--text);
       line-height: 1;
+      opacity: 0.5;
+      font-size: 20px;
+      display: block;
     }
 
     @media (max-width: 640px) {
@@ -516,7 +519,7 @@
         padding: 20px 20px 0;
         position: sticky;
         top: 0;
-        z-index: 50;
+        z-index: 10;
         background: var(--bg);
       }
 
@@ -561,7 +564,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
     <div class="mobile-nav-drawer">
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#x2715;</button>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"><img src="assets/icons/close.svg" width="40" height="40" alt=""></button>
       <nav class="case-nav" id="mobileNav">
         <div class="nav-group">
           <div class="nav-group-label">Building Teams</div>
