@@ -448,17 +448,77 @@
     }
 
     /* ── Mobile ── */
+    .mobile-header { display: none; }
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
+    }
+    .hamburger-btn span {
+      display: block;
+      height: 1.5px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .hamburger-btn span:nth-child(1) { width: 22px; }
+    .hamburger-btn span:nth-child(2) { width: 14px; }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+    }
+    .mobile-nav-overlay.open { display: block; }
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+    }
+    .mobile-nav-drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--bg);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      overflow-y: auto;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
+    }
+    .mobile-nav-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      align-self: flex-end;
+      padding: 4px;
+      font-size: 22px;
+      color: var(--text);
+      line-height: 1;
+    }
+
     @media (max-width: 640px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 20px;
-      }
+      .sidebar { display: none; }
       main { margin-left: 0; }
       body { flex-direction: column; }
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--bg);
+      }
 
       .case-view { padding: 32px 20px 56px; }
       #view-about { padding: 40px 20px; }
@@ -486,6 +546,66 @@
   </style>
 </head>
 <body>
+
+  <!-- Mobile header (hamburger) -->
+  <header class="mobile-header">
+    <div class="logo-wrap" id="mobileLogo">
+      <img id="mobileLogoImg" width="63" height="35" alt="Mel">
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+      <img src="assets/icons/menu.svg" width="24" height="24" alt="">
+    </button>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-drawer">
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#x2715;</button>
+      <nav class="case-nav" id="mobileNav">
+        <div class="nav-group">
+          <div class="nav-group-label">Building Teams</div>
+          <div class="nav-item" data-view="ux-org-design">
+            <img src="assets/icons/avatars.svg" width="20" height="20" alt="">
+            UX Org Design
+          </div>
+          <div class="nav-item" data-view="uniform">
+            <img src="assets/icons/uniform.svg" width="20" height="20" alt="">
+            Uniform
+          </div>
+          <div class="nav-item" data-view="10-50-90">
+            <img src="assets/icons/chart.svg" width="20" height="20" alt="">
+            10-50-90
+          </div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Designing Products</div>
+          <div class="nav-item" data-view="kiid-ai">
+            <img src="assets/icons/kiid icon.svg" width="20" height="20" alt="">
+            Kiid AI
+          </div>
+          <div class="nav-item" data-view="barstool-espn">
+            <img src="assets/icons/espn bet icon.svg" width="20" height="20" alt="">
+            ESPN Bet &amp; Barstool SB
+          </div>
+          <div class="nav-item" data-view="thescore-bet">
+            <img src="assets/icons/thescore bet icon.svg" width="20" height="20" alt="">
+            theScore Bet &amp; Casino
+          </div>
+          <div class="nav-item" data-view="thescore">
+            <img src="assets/icons/thescore icon.svg" width="20" height="20" alt="">
+            theScore
+          </div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-item" data-view="about">
+            <img src="assets/icons/wave.svg" width="20" height="20" alt="">
+            About Me
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 
   <!-- Sidebar -->
   <aside class="sidebar">
@@ -1237,8 +1357,26 @@
     });
 
     // Logo click → home
-    document.querySelector('.logo-wrap').addEventListener('click', () => showView('home'));
-    document.querySelector('.logo-wrap').style.cursor = 'pointer';
+    document.querySelectorAll('.logo-wrap').forEach(el => {
+      el.addEventListener('click', () => { showView('home'); closeMobileNav(); });
+      el.style.cursor = 'pointer';
+    });
+
+    // Copy sidebar logo src to mobile header logo
+    const sidebarLogo = document.querySelector('.sidebar .logo-wrap img');
+    const mobileLogoImg = document.getElementById('mobileLogoImg');
+    if (sidebarLogo && mobileLogoImg) mobileLogoImg.src = sidebarLogo.src;
+
+    // Mobile nav
+    const overlay = document.getElementById('mobileNavOverlay');
+    function openMobileNav() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMobileNav() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('hamburgerBtn').addEventListener('click', openMobileNav);
+    document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+    document.getElementById('mobileNavBackdrop').addEventListener('click', closeMobileNav);
+    document.querySelectorAll('#mobileNav .nav-item').forEach(item => {
+      item.addEventListener('click', () => { showView(item.dataset.view); closeMobileNav(); });
+    });
 
     // Restore view from URL hash on load
     const initialView = location.hash.slice(1) || 'home';
